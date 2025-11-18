@@ -1,0 +1,144 @@
+/* Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  transition: 0.3s ease-in-out;
+}
+
+/* Light Mode Colors */
+:root {
+  --bg: #f5f5f5;
+  --text: #111;
+  --card-bg: rgba(255, 255, 255, 0.7);
+  --shadow: rgba(0, 0, 0, 0.1);
+  --button-bg: #111;
+  --button-text: #fff;
+}
+
+/* Dark Mode Colors */
+.dark {
+  --bg: #0d0d0d;
+  --text: #fff;
+  --card-bg: rgba(30, 30, 30, 0.6);
+  --shadow: rgba(255, 255, 255, 0.1);
+  --button-bg: #fff;
+  --button-text: #111;
+}
+
+.navbar {
+  width: 100%;
+  padding: 15px;
+  text-align: center;
+  backdrop-filter: blur(10px);
+  background: var(--card-bg);
+  box-shadow: 0 5px 20px var(--shadow);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.navbar a {
+  color: var(--text);
+  margin: 0 15px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.navbar a:hover {
+  color: #3498db;
+}
+
+.container {
+  width: 90%;
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 25px;
+  border-radius: 15px;
+  background: var(--card-bg);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 5px 20px var(--shadow);
+  animation: fadeIn 0.6s ease;
+}
+
+/* Inputs */
+input, textarea, select {
+  width: 100%;
+  padding: 12px;
+  margin: 15px 0;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  background: rgba(255,255,255,0.4);
+  outline: none;
+  transition: 0.3s;
+}
+
+.dark input, .dark textarea {
+  background: rgba(50,50,50,0.7);
+  border: 1px solid #444;
+  color: #fff;
+}
+
+button {
+  background: var(--button-bg);
+  color: var(--button-text);
+  padding: 12px 15px;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px var(--shadow);
+}
+
+/* Fade-in Animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Dark/Light Button */
+.theme-toggle {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: var(--button-bg);
+  color: var(--button-text);
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
+  font-size: 20px;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.theme-toggle:hover {
+  transform: scale(1.1);
+}
+.output-box {
+  margin-top: 15px;
+  padding: 15px;
+  background: rgba(0,0,0,0.1);
+  border-radius: 10px;
+  font-weight: 500;
+  backdrop-filter: blur(10px);
+  transition: 0.3s;
+}
+
+.dark .output-box {
+  background: rgba(255,255,255,0.1);
+}
