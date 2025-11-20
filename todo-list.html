@@ -1,159 +1,189 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>To-Do List</title>
-  <link rel="stylesheet" href="assets/css/style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <style>
-    body {
-      background: #000;
-      font-family: Poppins, sans-serif;
-      color: #fff;
-      margin: 0;
-      padding: 0;
-      overflow-x: hidden;
-    }
+<!-- BASIC SEO -->
+<title>Online To-Do List – Save Tasks in Browser | ToolsGen.site</title>
+<meta name="description" content="Free online To-Do List by ToolsGen.site. Add, manage and save your daily tasks directly in your browser using LocalStorage. No login required." />
+<meta name="keywords" content="to do list online, online todo list, task manager online, simple todo list, browser todo list, toolsgen todo list" />
+<meta name="author" content="ToolsGen.site">
+<meta name="robots" content="index, follow">
 
-    .navbar {
-      width: 100%;
-      padding: 15px;
-      text-align: center;
-      background: rgba(255,255,255,0.05);
-      backdrop-filter: blur(10px);
-      border-bottom: 1px solid rgba(255,255,255,0.1);
-    }
+<!-- CANONICAL -->
+<link rel="canonical" href="https://toolsgen.site/todo-list.html" />
 
-    .navbar a {
-      color: #fff;
-      text-decoration: none;
-      font-size: 18px;
-    }
+<!-- FAVICON -->
+<link rel="icon" type="image/png" href="assets/img/favicon.png">
 
-    .theme-toggle {
-      position: fixed;
-      top: 20px;
-      right: 20px;
-      background: rgba(255,255,255,0.1);
-      border: none;
-      padding: 10px;
-      font-size: 22px;
-      color: white;
-      cursor: pointer;
-      border-radius: 10px;
-      backdrop-filter: blur(10px);
-      transition: 0.3s;
-    }
+<!-- THEME COLOR -->
+<meta name="theme-color" content="#00ffff">
 
-    .theme-toggle:hover {
-      background: rgba(255,255,255,0.2);
-      transform: scale(1.1);
-    }
+<!-- OPEN GRAPH -->
+<meta property="og:title" content="Online To-Do List | ToolsGen.site" />
+<meta property="og:description" content="Manage your tasks online using ToolsGen To-Do List. Tasks are saved locally in your browser for privacy." />
+<meta property="og:image" content="https://toolsgen.site/assets/img/preview.png" />
+<meta property="og:url" content="https://toolsgen.site/todo-list.html" />
+<meta property="og:type" content="website" />
 
-    .container {
-      width: 420px;
-      margin: 80px auto;
-      padding: 25px;
-      text-align: center;
+<!-- TWITTER CARD -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Online To-Do List | ToolsGen.site" />
+<meta name="twitter:description" content="Create and manage your tasks online with ToolsGen To-Do List." />
+<meta name="twitter:image" content="https://toolsgen.site/assets/img/preview.png" />
 
-      background: rgba(255,255,255,0.08);
-      border-radius: 20px;
-      backdrop-filter: blur(15px);
+<link rel="stylesheet" href="assets/css/style.css">
 
-      border: 2px solid rgba(0, 255, 255, 0.3);
-      box-shadow: 0 0 25px rgba(0,255,255,0.4);
+<style>
+  body {
+    background: #000;
+    font-family: Poppins, sans-serif;
+    color: #fff;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+  }
 
-      animation: fadeIn 0.7s ease-in-out;
-    }
+  .navbar {
+    width: 100%;
+    padding: 15px;
+    text-align: center;
+    background: rgba(255,255,255,0.05);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+  }
 
-    h1 {
-      font-size: 30px;
-      text-shadow: 0 0 8px cyan;
-    }
+  .navbar a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+  }
 
-    input {
-      width: 85%;
-      padding: 12px;
-      margin-top: 15px;
-      border-radius: 12px;
-      border: 2px solid rgba(0,255,255,0.4);
-      background: rgba(255,255,255,0.07);
-      color: white;
-      outline: none;
-      backdrop-filter: blur(10px);
-      transition: 0.3s;
-    }
+  .theme-toggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: rgba(255,255,255,0.1);
+    border: none;
+    padding: 10px;
+    font-size: 22px;
+    color: white;
+    cursor: pointer;
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+    transition: 0.3s;
+  }
 
-    input:focus {
-      border-color: cyan;
-      box-shadow: 0 0 12px cyan;
-    }
+  .theme-toggle:hover {
+    background: rgba(255,255,255,0.2);
+    transform: scale(1.1);
+  }
 
-    button {
-      width: 85%;
-      margin-top: 20px;
-      padding: 12px;
-      border: none;
-      font-size: 18px;
-      color: #000;
-      background: cyan;
-      border-radius: 12px;
-      cursor: pointer;
-      transition: 0.3s;
-      font-weight: bold;
-    }
+  .container {
+    width: 420px;
+    margin: 80px auto;
+    padding: 25px;
+    text-align: center;
+    background: rgba(255,255,255,0.08);
+    border-radius: 20px;
+    backdrop-filter: blur(15px);
+    border: 2px solid rgba(0, 255, 255, 0.3);
+    box-shadow: 0 0 25px rgba(0,255,255,0.4);
+    animation: fadeIn 0.7s ease-in-out;
+  }
 
-    button:hover {
-      box-shadow: 0 0 15px cyan;
-      transform: scale(1.05);
-    }
+  h1 {
+    font-size: 30px;
+    text-shadow: 0 0 8px cyan;
+  }
 
-    ul.todo-list {
-      margin-top: 25px;
-      padding: 0;
-      list-style: none;
-      text-align: left;
-    }
+  p {
+    color: #ccc;
+  }
 
-    ul li {
-      background: rgba(255,255,255,0.05);
-      padding: 12px;
-      margin-bottom: 10px;
-      border-radius: 12px;
-      border: 1px solid rgba(0,255,255,0.3);
-      box-shadow: 0 0 10px rgba(0,255,255,0.4);
+  input {
+    width: 85%;
+    padding: 12px;
+    margin-top: 15px;
+    border-radius: 12px;
+    border: 2px solid rgba(0,255,255,0.4);
+    background: rgba(255,255,255,0.07);
+    color: white;
+    outline: none;
+    backdrop-filter: blur(10px);
+    transition: 0.3s;
+  }
 
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+  input:focus {
+    border-color: cyan;
+    box-shadow: 0 0 12px cyan;
+  }
 
-      animation: fadeIn 0.4s ease;
-    }
+  button {
+    width: 85%;
+    margin-top: 20px;
+    padding: 12px;
+    border: none;
+    font-size: 18px;
+    color: #000;
+    background: cyan;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: 0.3s;
+    font-weight: bold;
+  }
 
-    ul li span {
-      font-size: 16px;
-    }
+  button:hover {
+    box-shadow: 0 0 15px cyan;
+    transform: scale(1.05);
+  }
 
-    .delete-btn {
-      background: rgba(255,0,0,0.6);
-      border: none;
-      padding: 7px 10px;
-      cursor: pointer;
-      border-radius: 8px;
-      color: #fff;
-      transition: 0.3s;
-    }
+  ul.todo-list {
+    margin-top: 25px;
+    padding: 0;
+    list-style: none;
+    text-align: left;
+  }
 
-    .delete-btn:hover {
-      background: red;
-      box-shadow: 0 0 10px red;
-      transform: scale(1.1);
-    }
+  ul li {
+    background: rgba(255,255,255,0.05);
+    padding: 12px;
+    margin-bottom: 10px;
+    border-radius: 12px;
+    border: 1px solid rgba(0,255,255,0.3);
+    box-shadow: 0 0 10px rgba(0,255,255,0.4);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    animation: fadeIn 0.4s ease;
+  }
 
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(10px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-  </style>
+  ul li span {
+    font-size: 16px;
+  }
+
+  .delete-btn {
+    background: rgba(255,0,0,0.6);
+    border: none;
+    padding: 7px 10px;
+    cursor: pointer;
+    border-radius: 8px;
+    color: #fff;
+    transition: 0.3s;
+  }
+
+  .delete-btn:hover {
+    background: red;
+    box-shadow: 0 0 10px red;
+    transform: scale(1.1);
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+</style>
 
 </head>
 <body>
@@ -174,11 +204,8 @@
   <ul id="taskList" class="todo-list"></ul>
 </div>
 
-  <script async="async" data-cfasync="false" src="//pl28087334.effectivegatecpm.com/bc1aa65c07d43f322e9f9071d197ec58/invoke.js"></script>
-<div id="container-bc1aa65c07d43f322e9f9071d197ec58"></div>
 <script src="assets/js/main.js"></script>
 <script src="assets/js/todo.js"></script>
 
 </body>
 </html>
-
