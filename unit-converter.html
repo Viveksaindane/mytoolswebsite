@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- BASIC SEO -->
+<title>Unit Converter Online – KM to Meter Converter | ToolsGen.site</title>
+<meta name="description" content="Free online Unit Converter by ToolsGen.site. Quickly convert kilometers to meters with this simple and fast KM to Meter converter tool." />
+<meta name="keywords" content="unit converter, km to meter converter, kilometer to meter, online unit converter, length converter, toolsgen unit converter" />
+<meta name="author" content="ToolsGen.site">
+<meta name="robots" content="index, follow">
+
+<!-- CANONICAL -->
+<link rel="canonical" href="https://toolsgen.site/unit-converter.html" />
+
+<!-- FAVICON -->
+<link rel="icon" type="image/png" href="assets/img/favicon.png">
+
+<!-- THEME COLOR -->
+<meta name="theme-color" content="#00ffff">
+
+<!-- OPEN GRAPH -->
+<meta property="og:title" content="Unit Converter – KM to Meter | ToolsGen.site" />
+<meta property="og:description" content="Convert kilometers to meters instantly using the free Unit Converter tool by ToolsGen.site." />
+<meta property="og:image" content="https://toolsgen.site/assets/img/preview.png" />
+<meta property="og:url" content="https://toolsgen.site/unit-converter.html" />
+<meta property="og:type" content="website" />
+
+<!-- TWITTER CARD -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Unit Converter – KM to Meter | ToolsGen.site" />
+<meta name="twitter:description" content="Use ToolsGen’s free Unit Converter to convert kilometers to meters instantly." />
+<meta name="twitter:image" content="https://toolsgen.site/assets/img/preview.png" />
+
+<link rel="stylesheet" href="assets/css/style.css">
+
+<style>
+  body {
+    background: #000;
+    font-family: Poppins, sans-serif;
+    color: #fff;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+  }
+
+  .navbar {
+    width: 100%;
+    padding: 15px;
+    text-align: center;
+    background: rgba(255,255,255,0.05);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+  }
+
+  .navbar a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+  }
+
+  .theme-toggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: rgba(255,255,255,0.1);
+    border: none;
+    padding: 10px;
+    font-size: 22px;
+    color: white;
+    cursor: pointer;
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+    transition: 0.3s;
+  }
+
+  .theme-toggle:hover {
+    background: rgba(255,255,255,0.2);
+    transform: scale(1.1);
+  }
+
+  .container {
+    width: 420px;
+    margin: 80px auto;
+    padding: 25px;
+    text-align: center;
+    background: rgba(255,255,255,0.08);
+    border-radius: 20px;
+    backdrop-filter: blur(15px);
+    border: 2px solid rgba(0, 255, 255, 0.3);
+    box-shadow: 0 0 25px rgba(0,255,255,0.4);
+    animation: fadeIn 0.7s ease-in-out;
+  }
+
+  h1 {
+    font-size: 30px;
+    text-shadow: 0 0 8px cyan;
+  }
+
+  p {
+    color: #ccc;
+  }
+
+  input {
+    width: 85%;
+    padding: 12px;
+    margin-top: 15px;
+    border-radius: 12px;
+    border: 2px solid rgba(0,255,255,0.4);
+    background: rgba(255,255,255,0.07);
+    color: white;
+    outline: none;
+    backdrop-filter: blur(10px);
+    transition: 0.3s;
+  }
+
+  input:focus {
+    border-color: cyan;
+    box-shadow: 0 0 12px cyan;
+  }
+
+  button {
+    width: 85%;
+    margin-top: 20px;
+    padding: 12px;
+    border: none;
+    font-size: 18px;
+    color: #000;
+    background: cyan;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: 0.3s;
+    font-weight: bold;
+  }
+
+  button:hover {
+    box-shadow: 0 0 15px cyan;
+    transform: scale(1.05);
+  }
+
+  .output-box {
+    margin-top: 20px;
+    padding: 15px;
+    border-radius: 12px;
+    background: rgba(255,255,255,0.07);
+    border: 1px solid rgba(0,255,255,0.3);
+    box-shadow: 0 0 15px rgba(0,255,255,0.3);
+    font-size: 20px;
+    animation: fadeIn 0.5s ease;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+</style>
+
+</head>
+<body>
+
+<!-- <button class="theme-toggle" onclick="toggleTheme()">🌙</button> -->
+
+<div class="navbar">
+  <a href="index.html">🏠 Home</a>
+</div>
+
+<div class="container">
+  <h1>🔁 Unit Converter</h1>
+  <p>Convert kilometers to meters.</p>
+
+  <input type="number" id="km" placeholder="Enter KM">
+
+  <button onclick="convertUnit()">Convert</button>
+
+  <div class="output-box" id="meter"></div>
+</div>
+
+<script src="assets/js/main.js"></script>
+<script src="assets/js/unitConverter.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- BASIC SEO -->
+  <title>EMI Calculator Online – Loan EMI Calculator | ToolsGen.site</title>
+  <meta name="description" content="Free online EMI Calculator by ToolsGen.site. Calculate your monthly loan EMI, interest amount and total payable instantly." />
+  <meta name="keywords" content="emi calculator, loan emi calculator, online emi calculator, interest calculator, home loan emi, personal loan emi, toolsgen emi calculator" />
+  <meta name="author" content="ToolsGen.site">
+  <meta name="robots" content="index, follow">
+
+  <!-- CANONICAL -->
+  <link rel="canonical" href="https://toolsgen.site/emi-calculator.html" />
+
+  <!-- FAVICON -->
+  <link rel="icon" type="image/png" href="assets/img/favicon.png">
+
+  <!-- THEME COLOR -->
+  <meta name="theme-color" content="#00ffff">
+
+  <!-- OPEN GRAPH for Social -->
+  <meta property="og:title" content="Loan EMI Calculator Online | ToolsGen.site" />
+  <meta property="og:description" content="Calculate your Loan EMI instantly using the free EMI Calculator by ToolsGen.site." />
+  <meta property="og:image" content="https://toolsgen.site/assets/img/preview.png" />
+  <meta property="og:url" content="https://toolsgen.site/emi-calculator.html" />
+  <meta property="og:type" content="website" />
+
+  <!-- TWITTER CARD -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="EMI Calculator Online | ToolsGen.site" />
+  <meta name="twitter:description" content="Calculate loan EMI, interest and total amount payable instantly with ToolsGen EMI Calculator." />
+  <meta name="twitter:image" content="https://toolsgen.site/assets/img/preview.png" />
+
+  <link rel="stylesheet" href="assets/css/style.css">
+
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: "Poppins", sans-serif;
+      background: #0d0d0d;
+      color: #fff;
+    }
+
+    /* Navbar */
+    .navbar {
+      padding: 14px;
+      background: #000;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .navbar a {
+      color: cyan;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 18px;
+      transition: 0.3s;
+    }
+
+    .navbar a:hover {
+      text-shadow: 0 0 12px cyan;
+    }
+
+    /* Theme toggle */
+    .theme-toggle {
+      position: fixed;
+      top: 15px;
+      right: 15px;
+      background: transparent;
+      border: 2px solid cyan;
+      padding: 10px 12px;
+      border-radius: 50%;
+      color: cyan;
+      cursor: pointer;
+      font-size: 20px;
+      transition: 0.3s;
+    }
+
+    .theme-toggle:hover {
+      transform: scale(1.1);
+      box-shadow: 0 0 12px cyan;
+    }
+
+    /* Main container */
+    .container {
+      max-width: 500px;
+      margin: 80px auto;
+      padding: 35px;
+      border-radius: 20px;
+      background: rgba(20,20,20,0.65);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255,255,255,0.12);
+      box-shadow: 0 0 25px rgba(0,255,255,0.18);
+      text-align: center;
+      transition: 0.3s;
+    }
+
+    .container:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 0 35px rgba(0,255,255,0.35);
+    }
+
+    h1 {
+      font-size: 32px;
+      text-shadow: 0 0 10px cyan;
+    }
+
+    p {
+      opacity: 0.7;
+      margin-bottom: 20px;
+    }
+
+    /* Inputs */
+    input {
+      width: 100%;
+      padding: 15px;
+      margin: 10px 0;
+      border-radius: 12px;
+      border: 1px solid rgba(255,255,255,0.25);
+      background: rgba(255,255,255,0.07);
+      color: #fff;
+      font-size: 16px;
+      outline: none;
+      transition: 0.3s;
+    }
+
+    input:hover,
+    input:focus {
+      border-color: cyan;
+      box-shadow: 0 0 12px cyan;
+    }
+
+    /* Button */
+    button {
+      width: 100%;
+      padding: 14px;
+      margin-top: 15px;
+      background: linear-gradient(90deg, #00eaff, #008cff);
+      border: none;
+      border-radius: 12px;
+      font-size: 18px;
+      font-weight: bold;
+      cursor: pointer;
+      color: #000;
+      box-shadow: 0 0 18px rgba(0,255,255,0.4);
+      transition: 0.3s;
+    }
+
+    button:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 30px cyan;
+    }
+
+    /* Output box */
+    .output-box {
+      margin-top: 20px;
+      padding: 20px;
+      border-radius: 12px;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.2);
+      font-size: 20px;
+      box-shadow: 0 0 18px rgba(0,255,255,0.2);
+      min-height: 50px;
+      transition: 0.3s;
+      text-shadow: 0 0 5px cyan;
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- <button class="theme-toggle" onclick="toggleTheme()">🌙</button> -->
+
+<div class="navbar">
+  <a href="index.html">🏠 Home</a>
+</div>
+
+<div class="container">
+  <h1>💰 EMI Calculator</h1>
+  <p>Calculate your monthly loan repayment.</p>
+
+  <input id="loan" type="number" placeholder="Loan Amount (₹)">
+  <input id="rate" type="number" placeholder="Interest Rate (%)">
+  <input id="months" type="number" placeholder="Tenure (Months)">
+
+  <button onclick="calcEMI()">Calculate EMI</button>
+
+  <div class="output-box" id="emiResult"></div>
+</div>
+
+<script src="assets/js/main.js"></script>
+<script src="assets/js/emi.js"></script>
+
+</body>
+</html>
